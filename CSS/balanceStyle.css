@@ -1,0 +1,46 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 微軟正黑體;
+}
+
+#box {
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 30px;
+  text-align: center;
+}
+
+#box p {
+  margin-top: 20px;
+  font-size: 36px;
+}
+
+#box a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin-top: 20px;
+}
+
+#box h2 {
+  margin-top: 30px;
+}
+
+#box table, #box tr, #box td, #box th {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+#box table {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#box th:nth-child(1) {
+  width: 150px;
+}
+/*# sourceMappingURL=balanceStyle.css.map */
