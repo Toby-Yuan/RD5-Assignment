@@ -1,0 +1,47 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 微軟正黑體;
+}
+
+form {
+  width: 800px;
+  margin: 100px auto;
+  padding: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+form #fast input {
+  display: block;
+  width: 150px;
+  margin: 30px;
+  font-size: 30px;
+}
+
+form #typeIt {
+  position: relative;
+}
+
+form #typeIt #money {
+  display: block;
+  margin: 30px 0 10px 10px;
+  width: 300px;
+  outline: 0;
+  border-width: 0 0 2px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+form #typeIt #submit, form #typeIt #back {
+  width: 150px;
+  margin: 30px 10px;
+  font-size: 30px;
+}
+/*# sourceMappingURL=depositStyle.css.map */
