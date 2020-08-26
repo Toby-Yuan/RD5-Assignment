@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 微軟正黑體;
+}
+
+#contant{
+    width: 800px;
+    margin: 150px auto;
+    padding: 30px;
+
+    h1{
+        margin-bottom: 20px;
+    }
+
+    #box{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+
+        .act{
+            padding: 90px 0;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            font-size: 24px;
+            border-radius: 20px;
+            border: 1px solid black;
+
+            &:hover{
+                background: black;
+                color: white;
+            }
+        }
+    }
+}
