@@ -20,6 +20,11 @@ if(isset($_POST["login"])){
     }
 }
 
+if(isset($_GET["logout"])){
+    unset($_SESSION["uid"]);
+    session_destroy();
+}
+
 ?>
 
 <!DOCTYPE html>
