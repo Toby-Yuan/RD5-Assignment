@@ -1,3 +1,34 @@
+<?php
+
+session_start();
+require_once("connect.php");
+
+if(isset($_POST["create"])){
+    $userName = $_POST["userName"];
+    $userPassword = $_POST["userPassword"];
+    $email = $_POST["email"];
+    $phone = $_POST["phone"];
+    $money = $_POST["money"];
+
+    $userPassword = sha1($userPassword);
+
+    $insertIn = <<<insertin
+    INSERT INTO `member`(`userName`, `userPassword`, `email`, `phone`, `userMoney`) 
+    VALUES ('$userName', '$userPassword', '$email', '$phone', '$money');
+    insertin;
+    mysqli_query($link, $insertIn);
+
+    $search = "SELECT id FROM member WHERE userName = '$userName'";
+    $result = mysqli_query($link, $search);
+    $row = mysqli_fetch_assoc($result);
+    $_SESSION["uid"] = $row["id"];
+
+    header("location: member.php");
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
