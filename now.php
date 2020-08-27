@@ -29,9 +29,35 @@ $row = mysqli_fetch_assoc($result);
         <h1>本次紀錄</h1>
         <h2><?= ($deposit == 1) ? "存款" : "提款" ?></h2>
         <p>本次交易金額:&nbsp;<span><?= $cash ?></span></p>
-        <p>帳戶餘額:&nbsp;<span><?= $row["userMoney"] ?></span></p>
+        <p>帳戶餘額:&nbsp;<span id="money"><?= $row["userMoney"] ?></span></p>
+        <div id="hide">隱藏餘額</div>
         <div></div>
         <a href="member.php" id="link">回首頁</a>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            function clickHide(){
+                $("#hide").on("click", function(){
+                    $("#money").text("<?= $row["userMoney"] ?>");
+
+                    $("#hide").on("click", function(){
+                        $("#money").text("*****");
+                        clickHide();
+                    });
+                });
+            }
+
+            $("#hide").on("click", function(){
+                $("#money").text("<?= $row["userMoney"] ?>");
+
+                $("#hide").on("click", function(){
+                    $("#money").text("*****");
+                    clickHide();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
