@@ -30,7 +30,7 @@ $row = mysqli_fetch_assoc($result);
         <h2><?= ($deposit == 1) ? "存款" : "提款" ?></h2>
         <p>本次交易金額:&nbsp;<span><?= $cash ?></span></p>
         <p>帳戶餘額:&nbsp;<span id="money"><?= $row["userMoney"] ?></span></p>
-        <div id="hide">隱藏餘額</div>
+        <div id="hide" style="cursor: pointer;">隱藏餘額</div>
         <div></div>
         <a href="member.php" id="link">回首頁</a>
     </div>

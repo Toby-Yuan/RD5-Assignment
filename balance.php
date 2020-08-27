@@ -30,7 +30,7 @@ if(!isset($_SESSION["uid"])){
     <div id="box">
         <h1>現有餘額</h1>
         <p id="money"><?= $row["userMoney"] ?></p>
-        <div id="hide">隱藏餘額</div>
+        <div id="hide" style="cursor: pointer;">隱藏餘額</div>
         <a href="member.php">回首頁</a>
 
         <h2>交易明細</h2>
