@@ -11,7 +11,7 @@ CREATE TABLE member(
     userMoney int not null
 );
 
-CREATE TABLE member(
+CREATE TABLE detail(
     id int not null auto_increment primary key,
     memberId int not null,
     deposit enum('Y','N') not null DEFAULT 'N',
