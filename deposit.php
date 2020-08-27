@@ -19,6 +19,7 @@ function insertFun($value){
     $updateIn = "UPDATE member SET userMoney = $cash WHERE id = $uid";
     mysqli_query($link, $insertIn);
     mysqli_query($link, $updateIn);
+    $_SESSION["cash"] = $value;
     header("location: now.php");
     exit();
 }
