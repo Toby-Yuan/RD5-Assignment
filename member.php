@@ -41,7 +41,7 @@ if(!isset($_SESSION["uid"])){
             <a href="withdrawal.php" class="act">
                 提款    
             </a>
-            <a href="balance" class="act">
+            <a href="balance.php" class="act">
                 查詢餘額
             </a>
         </div>
