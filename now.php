@@ -31,7 +31,7 @@ $row = mysqli_fetch_assoc($result);
         <p>本次交易金額:&nbsp;<span><?= $cash ?></span></p>
         <p>帳戶餘額:&nbsp;<span><?= $row["userMoney"] ?></span></p>
         <div></div>
-        <a href="" id="link">回首頁</a>
+        <a href="member.php" id="link">回首頁</a>
     </div>
 </body>
 </html>
