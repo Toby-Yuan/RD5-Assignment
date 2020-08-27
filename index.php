@@ -25,6 +25,11 @@ if(isset($_GET["logout"])){
     session_destroy();
 }
 
+if(isset($_POST["create"])){
+    header("location: create.php");
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
