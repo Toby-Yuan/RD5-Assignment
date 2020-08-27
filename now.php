@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+require_once("connect.php");
+
+$deposit = $_SESSION["deposit"];
+$cash = $_SESSION["cash"];
+$uid = $_SESSION["uid"];
+
+unset($_SESSION["deposit"]);
+unset($_SESSION["cash"]);
+
+$search = "SELECT userMoney FROM member WHERE id = $uid";
+$result = mysqli_query($link, $search);
+$row = mysqli_fetch_assoc($result);
+
+?>
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -9,9 +27,9 @@
 <body>
     <div id="box">
         <h1>本次紀錄</h1>
-        <h2>存款</h2>
-        <p>本次交易金額:&nbsp;<span>1000</span></p>
-        <p>帳戶餘額:&nbsp;<span>3000</span></p>
+        <h2><?= ($deposit == 1) ? "存款" : "提款" ?></h2>
+        <p>本次交易金額:&nbsp;<span><?= $cash ?></span></p>
+        <p>帳戶餘額:&nbsp;<span><?= $row["userMoney"] ?></span></p>
         <div></div>
         <a href="" id="link">回首頁</a>
     </div>
