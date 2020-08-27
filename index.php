@@ -1,3 +1,27 @@
+<?php
+
+session_start();
+require_once("connect.php");
+
+if(isset($_POST["login"])){
+    $userName = $_POST["userName"];
+    $userPassword = $_POST["userPassword"];
+    $userPassword = sha1($userPassword);
+
+    $searchUser = "SELECT id, userPassword FROM member WHERE userName = '$userName'";
+    $result = mysqli_query($link, $searchUser);
+    $row = mysqli_fetch_assoc($result);
+
+    if($userPassword = $row["userPassword"]){
+        $_SESSION["uid"] = $row["id"];
+
+        header("location: member.php");
+        exit();
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
