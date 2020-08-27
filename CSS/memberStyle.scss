@@ -18,6 +18,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 30px;
+        margin-bottom: 40px;
 
         .act{
             padding: 90px 0;
@@ -29,9 +30,15 @@
             border: 1px solid black;
 
             &:hover{
-                background: black;
+                background: rgb(0, 0, 0);
                 color: white;
             }
         }
+    }
+
+    .logout{
+        text-decoration: none;
+        color: black;
+        font-size: 24px;
     }
 }

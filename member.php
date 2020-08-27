@@ -21,7 +21,15 @@ if(!isset($_SESSION["uid"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>網路銀行</title>
-    <link rel="stylesheet" href="CSS/memberStyle.css">
+    <link rel="stylesheet" href="./CSS/memberStyle.css">
+
+    <style>
+        .logout{
+            text-decoration: none;
+            color: black;
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body>
     <div id="contant">
@@ -38,7 +46,7 @@ if(!isset($_SESSION["uid"])){
             </a>
         </div>
 
-        <a href="index.php?logout=1">登出</a>
+        <a href="index.php?logout=1" class="logout">登出</a>
     </div>
 </body>
 </html>
