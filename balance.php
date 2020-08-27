@@ -29,7 +29,8 @@ if(!isset($_SESSION["uid"])){
 <body>
     <div id="box">
         <h1>現有餘額</h1>
-        <p><?= $row["userMoney"] ?></p>
+        <p id="money"><?= $row["userMoney"] ?></p>
+        <div id="hide">隱藏餘額</div>
         <a href="member.php">回首頁</a>
 
         <h2>交易明細</h2>
@@ -74,5 +75,30 @@ if(!isset($_SESSION["uid"])){
             </tr> -->
         </table>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            function clickHide(){
+                $("#hide").on("click", function(){
+                    $("#money").text("*****");
+
+                    $("#hide").on("click", function(){
+                        $("#money").text("<?= $row["userMoney"] ?>");
+                        clickHide();
+                    });
+                });
+            }
+
+            $("#hide").on("click", function(){
+                $("#money").text("*****");
+
+                $("#hide").on("click", function(){
+                    $("#money").text("<?= $row["userMoney"] ?>");
+                    clickHide();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
