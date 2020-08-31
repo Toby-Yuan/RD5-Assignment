@@ -7,10 +7,17 @@
   font-family: 微軟正黑體;
 }
 
+body {
+  background: #37802C;
+}
+
 form {
   width: 500px;
   margin: 150px auto;
   padding: 30px;
+  background: white;
+  -webkit-box-shadow: 0 0 15px #07190B;
+          box-shadow: 0 0 15px #07190B;
 }
 
 form h1 {
@@ -28,14 +35,14 @@ form .inputText {
 }
 
 form p {
-  color: red;
+  color: #5F962C;
   margin: 10px auto;
 }
 
 form .btn {
   margin: 20px;
   border: 2px solid rgba(0, 0, 0, 0);
-  background: skyblue;
+  background: #5F962C;
   padding: 10px 18px;
   font-size: 16px;
   -webkit-transition: 0.5s;
@@ -44,6 +51,7 @@ form .btn {
 
 form .btn:hover {
   background: white;
-  border: 2px solid black;
+  border: 2px solid #5F962C;
+  color: #5F962C;
 }
 /*# sourceMappingURL=indexStyle.css.map */
