@@ -29,8 +29,8 @@ if(!isset($_SESSION["uid"])){
 <body>
     <div id="box">
         <h1>現有餘額</h1>
-        <p id="money"><?= $row["userMoney"] ?></p>
-        <div id="hide" style="cursor: pointer;">隱藏餘額</div>
+        <p id="money">*****</p>
+        <div id="hide" style="cursor: pointer;"><img src="./img/open.png" alt=""></div>
         <a href="member.php">回首頁</a>
 
         <h2>交易明細</h2>
@@ -81,20 +81,24 @@ if(!isset($_SESSION["uid"])){
         $(document).ready(function(){
             function clickHide(){
                 $("#hide").on("click", function(){
-                    $("#money").text("*****");
+                    $("#money").text("<?= $row["userMoney"] ?>");
+                    $("#hide").html('<img src="./img/close.png" alt="">');
 
                     $("#hide").on("click", function(){
-                        $("#money").text("<?= $row["userMoney"] ?>");
+                        $("#money").text("*****");
+                        $("#hide").html('<img src="./img/open.png" alt="">');
                         clickHide();
                     });
                 });
             }
 
             $("#hide").on("click", function(){
-                $("#money").text("*****");
+                $("#money").text("<?= $row["userMoney"] ?>");
+                $("#hide").html('<img src="./img/close.png" alt="">');
 
                 $("#hide").on("click", function(){
-                    $("#money").text("<?= $row["userMoney"] ?>");
+                    $("#money").text("*****");
+                    $("#hide").html('<img src="./img/open.png" alt="">');
                     clickHide();
                 });
             });

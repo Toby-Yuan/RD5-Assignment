@@ -7,16 +7,27 @@
   font-family: 微軟正黑體;
 }
 
+body {
+  background: #37802C;
+}
+
 #box {
   width: 800px;
-  margin: 0 auto;
-  margin-top: 30px;
+  margin: 30px auto;
   text-align: center;
+  background: white;
+  padding: 30px;
+  -webkit-box-shadow: 0 0 15px #07190B;
+          box-shadow: 0 0 15px #07190B;
 }
 
 #box p {
   margin-top: 20px;
   font-size: 36px;
+}
+
+#box #hide img {
+  width: 50px;
 }
 
 #box a {
