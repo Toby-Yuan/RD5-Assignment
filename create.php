@@ -21,19 +21,19 @@ if(isset($_POST["create"])){
     $searchAll = "SELECT userName, email, phone FROM member";
     $resultAll = mysqli_query($link, $searchAll);
     while($all = mysqli_fetch_assoc($resultAll)){
-        if($userName = $all["userName"]){
+        if($userName == $all["userName"]){
             $repeatName = 1;
         }
-        if($email = $all["email"]){
+        if($email == $all["email"]){
             $repeatMail = 1;
         }
-        if($phone = $all["phone"]){
+        if($phone == $all["phone"]){
             $repeatPhone = 1;
         }
     }
 
-    $checkAll = $repeatPhone * $repeatName * $repeatMail;
-    if($checkAll = 0){
+    $checkAll = $repeatPhone + $repeatName + $repeatMail;
+    if($checkAll == 0){
         $insertIn = <<<insertin
         INSERT INTO `member`(`userName`, `userPassword`, `email`, `phone`, `userMoney`) 
         VALUES ('$userName', '$userPassword', '$email', '$phone', '$money');
