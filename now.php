@@ -29,8 +29,8 @@ $row = mysqli_fetch_assoc($result);
         <h1>本次紀錄</h1>
         <h2><?= ($deposit == 1) ? "存款" : "提款" ?></h2>
         <p>本次交易金額:&nbsp;<span><?= $cash ?></span></p>
-        <p>帳戶餘額:&nbsp;<span id="money"><?= $row["userMoney"] ?></span></p>
-        <div id="hide" style="cursor: pointer;">隱藏餘額</div>
+        <p>帳戶餘額:&nbsp;<span id="money">*****</span></p>
+        <div id="hide" style="cursor: pointer;"><img src="./img/open.png" alt=""></div>
         <div></div>
         <a href="member.php" id="link">回首頁</a>
     </div>
@@ -41,9 +41,11 @@ $row = mysqli_fetch_assoc($result);
             function clickHide(){
                 $("#hide").on("click", function(){
                     $("#money").text("<?= $row["userMoney"] ?>");
+                    $("#hide").html("<img src='./img/close.png'>");
 
                     $("#hide").on("click", function(){
                         $("#money").text("*****");
+                        $("#hide").html("<img src='./img/open.png'>");
                         clickHide();
                     });
                 });
@@ -51,9 +53,11 @@ $row = mysqli_fetch_assoc($result);
 
             $("#hide").on("click", function(){
                 $("#money").text("<?= $row["userMoney"] ?>");
+                $("#hide").html("<img src='./img/close.png'>");
 
                 $("#hide").on("click", function(){
                     $("#money").text("*****");
+                    $("#hide").html("<img src='./img/open.png'>");
                     clickHide();
                 });
             });

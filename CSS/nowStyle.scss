@@ -1,3 +1,7 @@
+$green: #37802C;
+$darkGreen: #07190B;
+$lightGreen: #5F962C;
+
 *{
     margin: 0;
     padding: 0;
@@ -5,9 +9,16 @@
     font-family: 微軟正黑體;
 }
 
+body{
+    background: $green;
+}
+
 #box{
     width: 600px;
     margin: 150px auto;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 15px $darkGreen;
 
     h1{
         margin-bottom: 30px;
@@ -30,5 +41,11 @@
         text-decoration: none;
         color: black;
         font-size: 20px;
+    }
+
+    #hide{
+        img{
+            width: 50px;
+        }
     }
 }
