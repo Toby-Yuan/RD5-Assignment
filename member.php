@@ -44,6 +44,9 @@ if(!isset($_SESSION["uid"])){
             <a href="balance.php" class="act">
                 查詢餘額
             </a>
+            <a href="balance.php" class="act">
+                匯款
+            </a>
         </div>
 
         <a href="index.php?logout=1" class="logout">登出</a>
