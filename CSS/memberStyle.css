@@ -7,10 +7,17 @@
   font-family: 微軟正黑體;
 }
 
+body {
+  background: #37802C;
+}
+
 #contant {
   width: 800px;
-  margin: 150px auto;
+  margin: 150px auto 0;
   padding: 30px;
+  background: white;
+  -webkit-box-shadow: 0 0 15px #07190B;
+          box-shadow: 0 0 15px #07190B;
 }
 
 #contant h1 {
@@ -27,17 +34,18 @@
 }
 
 #contant #box .act {
-  padding: 90px 0;
+  padding: 45px 0;
   text-align: center;
   text-decoration: none;
-  color: black;
+  color: #5F962C;
   font-size: 24px;
   border-radius: 20px;
-  border: 1px solid black;
+  border: 5px solid #5F962C;
 }
 
 #contant #box .act:hover {
-  background: skyblue;
+  background: #5F962C;
+  border: none;
   color: white;
 }
 
