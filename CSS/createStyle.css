@@ -27,6 +27,11 @@ form .inputText {
   font-size: 20px;
 }
 
+form p {
+  color: red;
+  margin: 10px 0;
+}
+
 form .btn {
   margin: 20px;
   border: 2px solid rgba(0, 0, 0, 0);
