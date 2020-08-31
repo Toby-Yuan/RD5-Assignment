@@ -1,3 +1,7 @@
+$green: #37802C;
+$darkGreen: #07190B;
+$lightGreen: #5F962C;
+
 *{
     margin: 0;
     padding: 0;
@@ -5,10 +9,16 @@
     font-family: 微軟正黑體;
 }
 
+body{
+    background: $green;
+}
+
 form{
     width: 500px;
-    margin: 100px auto;
+    margin: 50px auto 0px;
     padding: 30px;
+    background: white;
+    box-shadow: 0 0 15px $darkGreen;
 
     h1{
         margin-bottom: 20px;
@@ -25,21 +35,23 @@ form{
     }
 
     p{
-        color: red;
+        color: $lightGreen;
         margin: 10px 0;
     }
 
     .btn{
         margin: 20px;
         border: 2px solid rgba(0, 0, 0, 0);
-        background: skyblue;
+        background: $lightGreen;
         padding: 10px 18px;
         font-size: 16px;
         transition: 0.5s;
+        color: white;
 
         &:hover{
             background: white;
-            border: 2px solid black;
+            border: 2px solid $lightGreen;
+            color: $lightGreen;
         }
     }
 }
