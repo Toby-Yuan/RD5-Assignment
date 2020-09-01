@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -11,11 +17,13 @@
         <h1>匯款資訊</h1>
 
         <form action="" method="post">
-            <label for="tranName">受匯人帳戶</label>
+            <label for="tranName">受匯人帳戶&nbsp;</label>
             <input type="text" id="tranName" name="tranName">
-            <label for="tranMoney">匯款金額</label>
+            <br>
+            <label for="tranMoney">匯款金額&nbsp;</label>
             <input type="text" id="tranMoney" name="tranMoney">
 
+            <br>
             <input type="submit" value="送出" name="submit">
             <input type="submit" value="回首頁" name="back">
         </form>
