@@ -1,11 +1,29 @@
 <?php
 
 session_start();
+require_once("connect.php");
 
 $insert1 = $_SESSION["insert1"];
 $insert2 = $_SESSION["insert2"];
 $update1 = $_SESSION["update1"];
 $update2 = $_SESSION["update2"];
+
+if(isset($_POST["submit"])){
+    mysqli_query($link, $insert1);
+    mysqli_query($link, $insert2);
+    mysqli_query($link, $update1);
+    mysqli_query($link, $update2);
+
+    unset($_SESSION["insert1"]);
+    unset($_SESSION["insert2"]);
+    unset($_SESSION["update1"]);
+    unset($_SESSION["update2"]);
+    unset($_SESSION["tranName"]);
+    unset($_SESSION["tranMoney"]);
+
+    header("location: member.php");
+    exit();
+}
 
 if(isset($_POST["cancel"])){
     unset($_SESSION["insert1"]);
