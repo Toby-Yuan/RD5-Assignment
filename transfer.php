@@ -2,6 +2,32 @@
 
 session_start();
 
+if(isset($_POST["submit"])){
+    $uid = $_SESSION["uid"];
+    $tranName = $_POST["tranName"];
+    $tranMoney = $_POST["tranMoney"];
+    $nowTime = date("Y-m-d H:i:s");
+
+    $search1 = "SELECT userMoney FROM member WHERE id = $uid";
+    $search2 = "SELECT id, userMoney FROM member WHERE userName = $tranName";
+    $result1 = mysqli_query($link, $search1);
+    $result2 = mysqli_query($link, $search2);
+    $member1 = mysqli_fetch_assoc($result1);
+    $member2 = mysqli_fetch_assoc($result2);
+
+    $member1Money = $member1["userMoney"] - $tranMoney;
+    $member2Id = $member2["id"];
+    $member2Money = $member2["userMoney"] + $tranMoney;
+
+    $_SESSION["insert1"] = "INSERT INTO detail (memberId, deposit, cash, nowTime, transfer) VALUES ($uid, 'N', $tranMoney, '$nowTime', 1)";
+    $_SESSION["insert2"] = "INSERT INTO detail (memberId, deposit, cash, nowTime, transfer) VALUES ($member2Id, 'N', $tranMoney, '$nowTime', 2)";
+    $_SESSION["update1"] = "UPDATE member SET userMoney = $member1Money WHERE id = $uid";
+    $_SESSION["update2"] = "UPDATE member SET userMoney = $member2Money WHERE id = $member2Id";
+
+    header("location: check.php");
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
