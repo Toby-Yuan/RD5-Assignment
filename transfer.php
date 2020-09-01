@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require_once("connect.php");
 
 if(isset($_POST["submit"])){
     $uid = $_SESSION["uid"];
@@ -9,7 +10,7 @@ if(isset($_POST["submit"])){
     $nowTime = date("Y-m-d H:i:s");
 
     $search1 = "SELECT userMoney FROM member WHERE id = $uid";
-    $search2 = "SELECT id, userMoney FROM member WHERE userName = $tranName";
+    $search2 = "SELECT id, userMoney FROM member WHERE userName = '$tranName'";
     $result1 = mysqli_query($link, $search1);
     $result2 = mysqli_query($link, $search2);
     $member1 = mysqli_fetch_assoc($result1);
