@@ -40,6 +40,7 @@ if(!isset($_SESSION["uid"])){
                 <th>存款</th>
                 <th>提款</th>
                 <th>餘額</th>
+                <th>備註</th>
             </tr>
 
             <?php 
@@ -53,6 +54,7 @@ if(!isset($_SESSION["uid"])){
                         <td><?= $detail["cash"] ?></td>
                         <td>0</td>
                         <td><?= $money ?></td>
+                        <td><?= ($detail["transfer"] == 0)? "" : "匯款" ?></td>
                     <?php
                             $money = $money - $detail["cash"]; 
                         } else {
@@ -60,6 +62,7 @@ if(!isset($_SESSION["uid"])){
                         <td>0</td>
                         <td><?= $detail["cash"] ?></td>
                         <td><?= $money ?></td>
+                        <td><?= ($detail["transfer"] == 0)? "" : "匯款" ?></td>
                     <?php
                             $money = $money + $detail["cash"]; 
                         } 
