@@ -24,6 +24,7 @@ body {
 #box p {
   margin-top: 20px;
   font-size: 36px;
+  cursor: default;
 }
 
 #box #hide img {
@@ -49,6 +50,7 @@ body {
 #box table {
   margin-top: 20px;
   width: 100%;
+  cursor: default;
 }
 
 #box th:nth-child(1) {
