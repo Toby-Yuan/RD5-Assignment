@@ -28,6 +28,11 @@ if(isset($_POST["submit"])){
     exit();
 }
 
+if(isset($_POST["back"])){
+    header("location: index.php");
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
