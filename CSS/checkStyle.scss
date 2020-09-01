@@ -1,0 +1,47 @@
+$green: #37802C;
+$darkGreen: #07190B;
+$lightGreen: #5F962C;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 微軟正黑體;
+}
+
+body{
+    background: $green;
+}
+
+#box{
+    width: 800px;
+    margin: 50px auto 0;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 15px $darkGreen;
+
+    h1{
+        margin-bottom: 40px;
+    }
+
+    h2{
+        margin-bottom: 30px;
+    }
+
+    form{
+        input{
+            width: 150px;
+            margin: 60px 10px 0;
+            font-size: 30px;
+            border: 2px solid rgba(0, 0, 0, 0);
+            background: $lightGreen;
+            color: white;
+            border-radius: 2px;
+
+            &:hover{
+                border: 2px solid $darkGreen;
+                color: $darkGreen;
+            }
+        }
+    }
+}

@@ -24,6 +24,8 @@ if(isset($_POST["submit"])){
     $_SESSION["insert2"] = "INSERT INTO detail (memberId, deposit, cash, nowTime, transfer) VALUES ($member2Id, 'N', $tranMoney, '$nowTime', 2)";
     $_SESSION["update1"] = "UPDATE member SET userMoney = $member1Money WHERE id = $uid";
     $_SESSION["update2"] = "UPDATE member SET userMoney = $member2Money WHERE id = $member2Id";
+    $_SESSION["tranName"] = $tranName;
+    $_SESSION["tranMoney"] = $tranMoney;
 
     header("location: check.php");
     exit();
