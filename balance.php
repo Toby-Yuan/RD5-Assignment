@@ -12,7 +12,7 @@ if(!isset($_SESSION["uid"])){
     $result = mysqli_query($link, $search);
     $row = mysqli_fetch_assoc($result);
 
-    $searchDetail = "SELECT nowTime, deposit, cash FROM detail WHERE memberId = $uid ORDER BY nowTime DESC";
+    $searchDetail = "SELECT nowTime, deposit, cash, transfer FROM detail WHERE memberId = $uid ORDER BY nowTime DESC";
     $resultDetail = mysqli_query($link, $searchDetail);
 }
 

@@ -21,7 +21,7 @@ if(isset($_POST["submit"])){
     $member2Money = $member2["userMoney"] + $tranMoney;
 
     $_SESSION["insert1"] = "INSERT INTO detail (memberId, deposit, cash, nowTime, transfer) VALUES ($uid, 'N', $tranMoney, '$nowTime', 1)";
-    $_SESSION["insert2"] = "INSERT INTO detail (memberId, deposit, cash, nowTime, transfer) VALUES ($member2Id, 'N', $tranMoney, '$nowTime', 2)";
+    $_SESSION["insert2"] = "INSERT INTO detail (memberId, deposit, cash, nowTime, transfer) VALUES ($member2Id, 'Y', $tranMoney, '$nowTime', 2)";
     $_SESSION["update1"] = "UPDATE member SET userMoney = $member1Money WHERE id = $uid";
     $_SESSION["update2"] = "UPDATE member SET userMoney = $member2Money WHERE id = $member2Id";
     $_SESSION["tranName"] = $tranName;
@@ -32,7 +32,7 @@ if(isset($_POST["submit"])){
 }
 
 if(isset($_POST["back"])){
-    header("location: index.php");
+    header("location: member.php");
     exit();
 }
 
