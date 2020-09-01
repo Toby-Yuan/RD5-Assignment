@@ -7,6 +7,18 @@ $insert2 = $_SESSION["insert2"];
 $update1 = $_SESSION["update1"];
 $update2 = $_SESSION["update2"];
 
+if(isset($_POST["cancel"])){
+    unset($_SESSION["insert1"]);
+    unset($_SESSION["insert2"]);
+    unset($_SESSION["update1"]);
+    unset($_SESSION["update2"]);
+    unset($_SESSION["tranName"]);
+    unset($_SESSION["tranMoney"]);
+
+    header("location: member.php");
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>
