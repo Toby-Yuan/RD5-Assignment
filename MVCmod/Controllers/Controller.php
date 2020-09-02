@@ -9,8 +9,8 @@ class Controller extends Database{
 
     // 針對不同的url有不同的效果
     public static function CreateView($viewName){
-        require_once './views/' . $viewName . '.php';
         static::doSomething();
+        require_once './views/' . $viewName . '.php';
     }
 }
 
