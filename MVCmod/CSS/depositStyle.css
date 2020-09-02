@@ -1,0 +1,79 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 微軟正黑體;
+}
+
+body {
+  background: #37802C;
+}
+
+form {
+  width: 800px;
+  margin: 100px auto 0;
+  padding: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 40px;
+}
+
+form #fast {
+  background: white;
+  padding: 30px;
+  -webkit-box-shadow: 0 0 15px #07190B;
+          box-shadow: 0 0 15px #07190B;
+}
+
+form #fast input {
+  display: block;
+  width: 150px;
+  margin: 30px auto;
+  font-size: 30px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  background: #5F962C;
+  color: white;
+  border-radius: 2px;
+}
+
+form #fast input:hover {
+  border: 2px solid #07190B;
+  color: #07190B;
+}
+
+form #typeIt {
+  background: white;
+  padding: 30px;
+  -webkit-box-shadow: 0 0 15px #07190B;
+          box-shadow: 0 0 15px #07190B;
+}
+
+form #typeIt #money {
+  display: block;
+  margin: 30px 0 10px 10px;
+  width: 300px;
+  outline: 0;
+  border-width: 0 0 2px;
+  padding: 5px;
+  font-size: 20px;
+}
+
+form #typeIt #submit, form #typeIt #back {
+  width: 150px;
+  margin: 20px 10px;
+  font-size: 30px;
+  border: 2px solid rgba(0, 0, 0, 0);
+  background: #5F962C;
+  color: white;
+  border-radius: 2px;
+}
+
+form #typeIt #submit:hover, form #typeIt #back:hover {
+  border: 2px solid #07190B;
+  color: #07190B;
+}
+/*# sourceMappingURL=depositStyle.css.map */
