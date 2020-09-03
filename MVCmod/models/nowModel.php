@@ -10,6 +10,11 @@ class cash extends database{
     public $uid;
 
     public function __construct(){
+        if(!isset($_SESSION['uid'])){
+            header("location: ./hello");
+            exit();
+        }
+        
         $this->deposit = $_SESSION['deposit'];
         $this->cash = $_SESSION['cash'];
         $this->uid = $_SESSION['uid'];

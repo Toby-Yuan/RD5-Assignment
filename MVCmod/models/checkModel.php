@@ -4,7 +4,13 @@ require_once './models/database.php';
 session_start();
 
 class checkM extends database{
-
+    
+    public function __construct(){
+        if(!isset($_SESSION['uid'])){
+            header("location: ./hello");
+            exit();
+        }
+    }
 
     public function check(){
         $uid = $_SESSION['uid'];

@@ -5,6 +5,13 @@ session_start();
 
 class depositRun extends database{
 
+    public function __construct(){
+        if(!isset($_SESSION['uid'])){
+            header("location: ./hello");
+            exit();
+        }
+    }
+
     public static function insert(){
         $uid = $_SESSION['uid'];
         $_SESSION["deposit"] = 1;

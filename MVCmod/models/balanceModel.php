@@ -7,6 +7,13 @@ class getCash extends database{
 
     public $detailList;
 
+    public function __construct(){
+        if(!isset($_SESSION['uid'])){
+            header("location: ./hello");
+            exit();
+        }
+    }
+
     public function memberMoney(){
         $uid = $_SESSION['uid'];
         $search = self::query("SELECT userMoney FROM member WHERE id = $uid");

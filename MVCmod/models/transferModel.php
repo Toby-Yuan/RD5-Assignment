@@ -5,6 +5,12 @@ session_start();
 
 class transferM extends database{
 
+    public function __construct(){
+        if(!isset($_SESSION['uid'])){
+            header("location: ./hello");
+            exit();
+        }
+    }
 
     public function check(){
         $uid = $_SESSION['uid'];
