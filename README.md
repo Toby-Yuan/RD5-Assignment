@@ -13,6 +13,9 @@
 - Amy970105 / wrt123456
 - Hunter0829 / sfg456789
 
+# MVC網址
+- http://localhost:8888/RD5-Assignment/MVCmod/hello
+
 # 進度
 - 08/26 17:39 前端切版
 - 08/27 14:06 註冊功能
@@ -24,3 +27,4 @@
 - 08/31 15:50 設定帳號限制
 - 09/01 12:07 匯款功能啟用
 - 09/02 17:12 MVC建立(index, member, deposit, now)
+- 09/03 12:15 MVC完成
