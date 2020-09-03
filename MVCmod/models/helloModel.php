@@ -36,6 +36,15 @@ class member extends database{
             exit();
         }
     }
+
+    public function logout(){
+        if(isset($_GET["logout"])){
+            unset($_SESSION["uid"]);
+            session_destroy();
+            header("location: ./hello");
+            exit();
+        }
+    }
 }
 
 ?>

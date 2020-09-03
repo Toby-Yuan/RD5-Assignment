@@ -2,6 +2,7 @@
 require_once './controllers/helloController.php';
 $error = new controller;
 $error->result->create();
+$error->result->logout();
 ?>
 
 <!DOCTYPE html>

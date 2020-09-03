@@ -29,7 +29,7 @@ $result = new name;
             </a>
         </div>
 
-        <a href="index.php?logout=1" class="logout">登出</a>
+        <a href="./hello?logout=1" class="logout">登出</a>
     </div>
 </body>
 </html>
