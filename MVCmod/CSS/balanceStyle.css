@@ -1,0 +1,59 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 微軟正黑體;
+}
+
+body {
+  background: #37802C;
+}
+
+#box {
+  width: 800px;
+  margin: 30px auto;
+  text-align: center;
+  background: white;
+  padding: 30px;
+  -webkit-box-shadow: 0 0 15px #07190B;
+          box-shadow: 0 0 15px #07190B;
+}
+
+#box p {
+  margin-top: 20px;
+  font-size: 36px;
+  cursor: default;
+}
+
+#box #hide img {
+  width: 50px;
+}
+
+#box a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin-top: 20px;
+}
+
+#box h2 {
+  margin-top: 30px;
+}
+
+#box table, #box tr, #box td, #box th {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+#box table {
+  margin-top: 20px;
+  width: 100%;
+  cursor: default;
+}
+
+#box th:nth-child(1) {
+  width: 150px;
+}
+/*# sourceMappingURL=balanceStyle.css.map */
