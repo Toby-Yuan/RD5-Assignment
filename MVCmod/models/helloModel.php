@@ -29,6 +29,13 @@ class member extends database{
         }
         return $error;
     }
+
+    public function create(){
+        if(isset($_POST["create"])){
+            header("location: ./create");
+            exit();
+        }
+    }
 }
 
 ?>
