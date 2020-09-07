@@ -1,20 +1,148 @@
-CREATE database rd5 DEFAULT character set utf8;
+-- phpMyAdmin SQL Dump
+-- version 4.9.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Sep 07, 2020 at 01:35 AM
+-- Server version: 5.7.26
+-- PHP Version: 7.4.2
 
-USE rd5;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
-CREATE TABLE member(
-    id int not null auto_increment primary key,
-    userName varchar(20) not null,
-    userPassword varchar(50) not null,
-    email varchar(40) not null,
-    phone varchar(10) not null,
-    userMoney int not null
-);
+--
+-- Database: `rd5`
+--
 
-CREATE TABLE detail(
-    id int not null auto_increment primary key,
-    memberId int not null,
-    deposit enum('Y','N') not null DEFAULT 'N',
-    cash int not null,
-    nowTime varchar(20) not null
-);
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `detail`
+--
+
+CREATE TABLE `detail` (
+  `id` int(11) NOT NULL,
+  `memberId` int(11) NOT NULL,
+  `deposit` enum('Y','N') NOT NULL DEFAULT 'N',
+  `cash` int(11) NOT NULL,
+  `nowTime` varchar(20) NOT NULL,
+  `transfer` int(11) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `detail`
+--
+
+INSERT INTO `detail` (`id`, `memberId`, `deposit`, `cash`, `nowTime`, `transfer`) VALUES
+(1, 1, 'Y', 1000, '2020-08-27 07:03:57', 0),
+(2, 1, 'Y', 1000, '2020-08-27 07:19:19', 0),
+(3, 1, 'Y', 3000, '2020-08-27 07:24:00', 0),
+(4, 1, 'Y', 10000, '2020-08-27 07:27:03', 0),
+(5, 1, 'Y', 2000, '2020-08-27 07:28:06', 0),
+(6, 1, 'N', 2000, '2020-08-27 07:34:30', 0),
+(7, 1, 'N', 10000, '2020-08-27 07:34:55', 0),
+(8, 1, 'N', 1000, '2020-08-27 07:36:23', 0),
+(9, 1, 'Y', 3000, '2020-08-27 07:44:17', 0),
+(10, 1, 'Y', 2000, '2020-08-27 07:46:52', 0),
+(11, 1, 'N', 1000, '2020-08-27 07:47:00', 0),
+(12, 1, 'Y', 3000, '2020-08-27 08:29:23', 0),
+(13, 1, 'N', 1000, '2020-08-27 08:31:35', 0),
+(14, 1, 'Y', 3000, '2020-08-31 05:41:26', 0),
+(15, 1, 'N', 1000, '2020-08-31 05:41:56', 0),
+(16, 1, 'Y', 1000, '2020-08-31 08:39:41', 0),
+(17, 1, 'N', 1000, '2020-08-31 08:55:52', 0),
+(18, 1, 'Y', 7000, '2020-08-31 08:55:59', 0),
+(19, 2, 'Y', 5000, '2020-08-31 09:33:59', 0),
+(20, 2, 'N', 10000, '2020-08-31 09:34:04', 0),
+(21, 1, 'Y', 1000, '2020-09-01 03:34:27', 0),
+(22, 1, 'N', 3000, '2020-09-01 04:00:59', 1),
+(23, 2, 'Y', 3000, '2020-09-01 04:00:59', 2),
+(24, 1, 'N', 1000, '2020-09-01 04:03:21', 1),
+(25, 2, 'Y', 1000, '2020-09-01 04:03:21', 2),
+(26, 4, 'Y', 2500, '2020-09-01 05:47:41', 0),
+(27, 4, 'N', 1200, '2020-09-01 05:47:56', 1),
+(28, 1, 'Y', 1200, '2020-09-01 05:47:56', 2),
+(29, 1, 'N', 5000, '2020-09-01 05:52:11', 0),
+(30, 1, 'Y', 3000, '2020-09-02 07:55:22', 0),
+(31, 1, 'N', 1000, '2020-09-02 07:55:28', 0),
+(32, 1, 'Y', 1000, '2020-09-02 08:26:25', 0),
+(33, 1, 'Y', 1000, '2020-09-02 08:26:59', 0),
+(34, 1, 'Y', 1000, '2020-09-02 08:28:18', 0),
+(35, 1, 'Y', 1000, '2020-09-02 08:30:50', 0),
+(36, 1, 'Y', 1000, '2020-09-02 08:31:25', 0),
+(37, 1, 'Y', 7000, '2020-09-02 08:33:35', 0),
+(38, 1, 'Y', 1000, '2020-09-02 08:59:38', 0),
+(39, 1, 'Y', 1000, '2020-09-02 09:01:02', 0),
+(40, 1, 'Y', 1000, '2020-09-02 09:01:15', 0),
+(41, 1, 'Y', 1000, '2020-09-02 09:02:03', 0),
+(42, 1, 'Y', 1000, '2020-09-02 09:04:53', 0),
+(43, 1, 'Y', 1000, '2020-09-02 09:05:07', 0),
+(44, 1, 'Y', 1000, '2020-09-02 09:05:24', 0),
+(45, 1, 'Y', 1000, '2020-09-02 09:10:51', 0),
+(46, 1, 'Y', 7000, '2020-09-02 09:24:16', 0),
+(47, 1, 'Y', 3000, '2020-09-03 01:03:18', 0),
+(48, 1, 'N', 1000, '2020-09-03 01:14:35', 0),
+(49, 1, 'N', 3000, '2020-09-03 01:14:51', 0),
+(50, 1, 'N', 5000, '2020-09-03 01:19:32', 0),
+(51, 1, 'N', 5000, '2020-09-03 01:20:14', 0),
+(52, 1, 'N', 1200, '2020-09-03 03:23:31', 1),
+(53, 2, 'Y', 1200, '2020-09-03 03:23:31', 2),
+(54, 1, 'Y', 3000, '2020-09-04 01:05:41', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `member`
+--
+
+CREATE TABLE `member` (
+  `id` int(11) NOT NULL,
+  `userName` varchar(20) NOT NULL,
+  `userPassword` varchar(50) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `phone` varchar(10) NOT NULL,
+  `userMoney` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `member`
+--
+
+INSERT INTO `member` (`id`, `userName`, `userPassword`, `email`, `phone`, `userMoney`) VALUES
+(1, 'Dent0204', '7c222fb2927d828af22f592134e8932480637c0d', 'abc@mail.com', '0912345678', 32000),
+(2, 'Jimmy0528', '87acec17cd9dcd20a716cc2cf67417b71c8a7016', 'xyz@mail.com', '1234567890', 20200),
+(3, 'Alan0617', '345120426285ff8b1d43653a4d078170b4761f75', 'rts@mail.com', '7894561230', 2000),
+(4, 'Amy970105', 'f42f49c4366a7d1548ead4824f96d9393dca169f', 'uba@mail.com', '1594785632', 2300),
+(5, 'Hunter0829', 'd89fa85daec497199b67e5b7a7d782edc8e9b628', 'sfg123456@mail.com', '0998765432', 20000);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `detail`
+--
+ALTER TABLE `detail`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `member`
+--
+ALTER TABLE `member`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `detail`
+--
+ALTER TABLE `detail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+
+--
+-- AUTO_INCREMENT for table `member`
+--
+ALTER TABLE `member`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
