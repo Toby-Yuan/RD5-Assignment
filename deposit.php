@@ -3,19 +3,28 @@
 session_start();
 require_once("connect.php");
 $uid = $_SESSION["uid"];
+
+// 預設為存款
 $deposit = 'Y';
 $_SESSION["deposit"] = 1;
 
+// 搜尋用戶戶頭餘額
 $search = "SELECT userMoney FROM member WHERE id = $uid";
 $result = mysqli_query($link, $search);
 $row = mysqli_fetch_assoc($result);
 $cash = $row["userMoney"];
 
+
+// 根據不同按鈕存入不同資金
 function insertFun($value){
     $nowTime = date("Y-m-d H:i:s");
     global $cash, $uid, $deposit, $link;
     $cash += $value;
+
+    // 新增至明細資料庫
     $insertIn = "INSERT INTO detail (memberId, deposit, cash, nowTime) VALUES ($uid, '$deposit', $value, '$nowTime')";
+
+    // 更新用戶餘額
     $updateIn = "UPDATE member SET userMoney = $cash WHERE id = $uid";
     mysqli_query($link, $insertIn);
     mysqli_query($link, $updateIn);
@@ -24,6 +33,7 @@ function insertFun($value){
     exit();
 }
 
+// 不同按鈕存入不同金額
 if(isset($_POST["onek"])){
     insertFun(1000);
 }
@@ -49,6 +59,7 @@ if(isset($_POST["submit"])){
     insertFun($type);
 }
 
+// 取消存款
 if(isset($_POST["back"])){
     unset($_SESSION["deposit"]);
     header("location: member.php");
@@ -66,7 +77,10 @@ if(isset($_POST["back"])){
     <link rel="stylesheet" href="CSS/depositStyle.css">
 </head>
 <body>
+    <!-- 存款表格 -->
     <form action="" method="post">
+
+        <!-- 快速存款 -->
         <div id="fast">
             <h1>快速存款</h1>
             <input type="submit" value="1000" name="onek">
@@ -75,6 +89,8 @@ if(isset($_POST["back"])){
             <input type="submit" value="7000" name="senk">
             <input type="submit" value="10000" name="tenk">
         </div>
+
+        <!-- 手動輸入 -->
         <div id="typeIt">
             <h1>輸入金額</h1>
             <input type="text" name="money" id="money" pattern="\d{1,}">

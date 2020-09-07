@@ -8,6 +8,7 @@ $insert2 = $_SESSION["insert2"];
 $update1 = $_SESSION["update1"];
 $update2 = $_SESSION["update2"];
 
+// 再次確認匯款才執行
 if(isset($_POST["submit"])){
     mysqli_query($link, $insert1);
     mysqli_query($link, $insert2);
@@ -25,6 +26,7 @@ if(isset($_POST["submit"])){
     exit();
 }
 
+// 取消匯款
 if(isset($_POST["cancel"])){
     unset($_SESSION["insert1"]);
     unset($_SESSION["insert2"]);

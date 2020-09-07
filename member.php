@@ -3,6 +3,7 @@
 session_start();
 require_once("connect.php");
 
+// 需登入才可進入
 if(!isset($_SESSION["uid"])){
     header("location: index.php");
     exit();
@@ -32,6 +33,8 @@ if(!isset($_SESSION["uid"])){
     </style>
 </head>
 <body>
+
+    <!-- 會員區域, 以及各頁面連結 -->
     <div id="contant">
         <h1>HELLO <?= $row["userName"] ?> !!</h1>
         <div id="box">

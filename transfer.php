@@ -9,6 +9,7 @@ if(isset($_POST["submit"])){
     $tranMoney = $_POST["tranMoney"];
     $nowTime = date("Y-m-d H:i:s");
 
+    // 搜尋匯款人以及受匯人資訊
     $search1 = "SELECT userMoney FROM member WHERE id = $uid";
     $search2 = "SELECT id, userMoney FROM member WHERE userName = '$tranName'";
     $result1 = mysqli_query($link, $search1);
@@ -20,6 +21,7 @@ if(isset($_POST["submit"])){
     $member2Id = $member2["id"];
     $member2Money = $member2["userMoney"] + $tranMoney;
 
+    // 暫時存入暫存, 但是不執行匯款動作
     $_SESSION["insert1"] = "INSERT INTO detail (memberId, deposit, cash, nowTime, transfer) VALUES ($uid, 'N', $tranMoney, '$nowTime', 1)";
     $_SESSION["insert2"] = "INSERT INTO detail (memberId, deposit, cash, nowTime, transfer) VALUES ($member2Id, 'Y', $tranMoney, '$nowTime', 2)";
     $_SESSION["update1"] = "UPDATE member SET userMoney = $member1Money WHERE id = $uid";
@@ -31,6 +33,7 @@ if(isset($_POST["submit"])){
     exit();
 }
 
+// 取消匯款
 if(isset($_POST["back"])){
     header("location: member.php");
     exit();
@@ -50,6 +53,7 @@ if(isset($_POST["back"])){
     <div id="box">
         <h1>匯款資訊</h1>
 
+        <!-- 匯款表格 -->
         <form action="" method="post">
             <label for="tranName">受匯人帳戶&nbsp;</label>
             <input type="text" id="tranName" name="tranName">

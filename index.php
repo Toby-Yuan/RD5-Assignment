@@ -4,6 +4,7 @@ session_start();
 require_once("connect.php");
 $error = 0;
 
+// 登入系統
 if(isset($_POST["login"])){
     $error = 0;
     $userName = $_POST["userName"];
@@ -14,9 +15,12 @@ if(isset($_POST["login"])){
     $result = mysqli_query($link, $searchUser);
     $row = mysqli_fetch_assoc($result);
 
+    // 確認使用者存在
     if(!isset($row["id"])){
         $error = 1;
     }else{
+
+        // 密碼符合才可登入
         if($userPassword == $row["userPassword"]){
             $_SESSION["uid"] = $row["id"];
     
@@ -29,11 +33,13 @@ if(isset($_POST["login"])){
 
 }
 
+// 登出系統
 if(isset($_GET["logout"])){
     unset($_SESSION["uid"]);
     session_destroy();
 }
 
+// 連結 -> create
 if(isset($_POST["create"])){
     header("location: create.php");
     exit();
@@ -50,6 +56,8 @@ if(isset($_POST["create"])){
     <link rel="stylesheet" href="CSS/indexStyle.css">
 </head>
 <body>
+
+    <!-- 登入區域 -->
     <form action="" method="post">
         <h1>會員登入</h1>
         <label for="userName">帳號</label>

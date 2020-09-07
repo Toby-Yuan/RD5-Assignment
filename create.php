@@ -6,6 +6,7 @@ $repeatName = 0;
 $repeatMail = 0;
 $repeatPhone = 0;
 
+// 註冊系統
 if(isset($_POST["create"])){
     $repeatName = 0;
     $repeatMail = 0;
@@ -20,6 +21,8 @@ if(isset($_POST["create"])){
 
     $searchAll = "SELECT userName, email, phone FROM member";
     $resultAll = mysqli_query($link, $searchAll);
+
+    // 確保資料不重複
     while($all = mysqli_fetch_assoc($resultAll)){
         if($userName == $all["userName"]){
             $repeatName = 1;
@@ -33,6 +36,8 @@ if(isset($_POST["create"])){
     }
 
     $checkAll = $repeatPhone + $repeatName + $repeatMail;
+
+    // 皆不重複才可註冊
     if($checkAll == 0){
         $insertIn = <<<insertin
         INSERT INTO `member`(`userName`, `userPassword`, `email`, `phone`, `userMoney`) 
@@ -62,6 +67,7 @@ if(isset($_POST["create"])){
     <link rel="stylesheet" href="CSS/createStyle.css">
 </head>
 <body>
+    <!-- 註冊表格 -->
     <form action="" method="post">
         <h1>會員註冊</h1>
         <label for="userName">帳號</label>
