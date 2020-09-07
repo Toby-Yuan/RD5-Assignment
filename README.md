@@ -16,6 +16,9 @@
 # MVC網址
 - http://localhost:8888/RD5-Assignment/MVCmod/hello
 
+# 資料庫(請先複製資料庫格式)
+- database.sql
+
 # 進度
 - 08/26 17:39 前端切版
 - 08/27 14:06 註冊功能
