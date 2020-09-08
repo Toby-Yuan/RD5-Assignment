@@ -9,6 +9,7 @@ class tranGet {
         $this->result = new transferM();
     }
 
+    // 顯示錯誤訊息
     public function tranCheck(){
         if( $this->result->tranFun() == 1 ){
             return "餘額不足";

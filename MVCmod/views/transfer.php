@@ -15,6 +15,7 @@ $test = new tranGet();
     <div id="box">
         <h1>匯款資訊</h1>
 
+        <!-- 匯款表格 -->
         <form action="" method="post">
             <label for="tranName">受匯人帳戶&nbsp;</label>
             <input type="text" id="tranName" name="tranName">
