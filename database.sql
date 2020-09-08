@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Sep 07, 2020 at 01:35 AM
+-- Generation Time: Sep 08, 2020 at 06:56 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.4.2
 
@@ -87,7 +87,13 @@ INSERT INTO `detail` (`id`, `memberId`, `deposit`, `cash`, `nowTime`, `transfer`
 (51, 1, 'N', 5000, '2020-09-03 01:20:14', 0),
 (52, 1, 'N', 1200, '2020-09-03 03:23:31', 1),
 (53, 2, 'Y', 1200, '2020-09-03 03:23:31', 2),
-(54, 1, 'Y', 3000, '2020-09-04 01:05:41', 0);
+(54, 1, 'Y', 3000, '2020-09-04 01:05:41', 0),
+(55, 1, 'Y', 5000, '2020-09-07 04:13:49', 0),
+(56, 1, 'N', 3000, '2020-09-08 06:35:06', 0),
+(57, 1, 'N', 2000, '2020-09-08 06:35:15', 1),
+(58, 2, 'Y', 2000, '2020-09-08 06:35:15', 2),
+(59, 1, 'N', 1000, '2020-09-08 06:48:17', 1),
+(60, 2, 'Y', 1000, '2020-09-08 06:48:17', 2);
 
 -- --------------------------------------------------------
 
@@ -109,8 +115,8 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`id`, `userName`, `userPassword`, `email`, `phone`, `userMoney`) VALUES
-(1, 'Dent0204', '7c222fb2927d828af22f592134e8932480637c0d', 'abc@mail.com', '0912345678', 32000),
-(2, 'Jimmy0528', '87acec17cd9dcd20a716cc2cf67417b71c8a7016', 'xyz@mail.com', '1234567890', 20200),
+(1, 'Dent0204', '7c222fb2927d828af22f592134e8932480637c0d', 'abc@mail.com', '0912345678', 31000),
+(2, 'Jimmy0528', '87acec17cd9dcd20a716cc2cf67417b71c8a7016', 'xyz@mail.com', '1234567890', 23200),
 (3, 'Alan0617', '345120426285ff8b1d43653a4d078170b4761f75', 'rts@mail.com', '7894561230', 2000),
 (4, 'Amy970105', 'f42f49c4366a7d1548ead4824f96d9393dca169f', 'uba@mail.com', '1594785632', 2300),
 (5, 'Hunter0829', 'd89fa85daec497199b67e5b7a7d782edc8e9b628', 'sfg123456@mail.com', '0998765432', 20000);
@@ -139,7 +145,7 @@ ALTER TABLE `member`
 -- AUTO_INCREMENT for table `detail`
 --
 ALTER TABLE `detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `member`
