@@ -9,6 +9,7 @@ class insert{
         $this->result = new withdrawalRun();
     }
 
+    // 執行提款動作
     public function insert(){
         return $this->result::insert();
     }

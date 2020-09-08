@@ -12,6 +12,7 @@ class withdrawalRun extends database{
         }
     }
 
+    // 提款動作, 根據不同按鈕執行不同金額
     public static function insert(){
         $uid = $_SESSION['uid'];
         $_SESSION["deposit"] = 0;
@@ -50,6 +51,7 @@ class withdrawalRun extends database{
         }
     }
 
+    // 提出不同金額, 若餘額不足會提示
     public static function insertFun($value, $uid, $cash){
         $nowTime = date("Y-m-d H:i:s");
         $cash -= $value;

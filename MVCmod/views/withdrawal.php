@@ -13,6 +13,7 @@ $alert = $test->insert();
     <link rel="stylesheet" href="./CSS/depositStyle.css">
 </head>
 <body>
+    <!-- 提款表格 -->
     <form action="" method="post">
         <div id="fast">
             <h1>快速提款</h1>
