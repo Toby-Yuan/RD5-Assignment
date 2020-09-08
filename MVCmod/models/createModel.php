@@ -14,6 +14,7 @@ class createM extends database{
 
             $userPassword = sha1($userPassword);
 
+            // 確認各項資訊與原有會員不重複
             $check1 = $this->checkName();
             $check2 = $this->checkMail();
             $check3 = $this->checkPhone();
@@ -40,6 +41,7 @@ class createM extends database{
         return $search;
     }
 
+    // 用戶名不重複
     public function checkName(){
         if(isset($_POST["create"])){
             $userName = $_POST["userName"];
@@ -52,6 +54,7 @@ class createM extends database{
         }
     }
 
+    // 電子信箱不重複
     public function checkMail(){
         if(isset($_POST["create"])){
             $email = $_POST["email"];
@@ -64,6 +67,7 @@ class createM extends database{
         }
     }
 
+    // 電話不重複
     public function checkPhone(){
         if(isset($_POST["create"])){
             $phone = $_POST["phone"];

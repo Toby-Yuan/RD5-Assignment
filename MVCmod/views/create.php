@@ -13,6 +13,7 @@ $test->result->create();
     <link rel="stylesheet" href="CSS/createStyle.css">
 </head>
 <body>
+    <!-- 註冊表格 -->
     <form action="" method="post">
         <h1>會員註冊</h1>
         <label for="userName">帳號</label>

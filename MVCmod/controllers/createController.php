@@ -9,6 +9,7 @@ class createC {
         $this->result = new createM();
     }
 
+    // 顯示各項錯誤訊息
     public function repeatName(){
         if($this->result->checkName() == 1){
             return "此帳號已被使用";
