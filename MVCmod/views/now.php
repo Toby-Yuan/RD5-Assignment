@@ -26,6 +26,7 @@ $cashDetail = new cashCatch();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
+            // 顯示或隱藏餘額
             function clickHide(){
                 $("#hide").on("click", function(){
                     $("#money").text("<?= $cashDetail->result->getMoney() ?>");

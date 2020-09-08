@@ -9,6 +9,7 @@ class cash extends database{
     public $cash;
     public $uid;
 
+    // 抓取本次交易內容
     public function __construct(){
         if(!isset($_SESSION['uid'])){
             header("location: ./hello");
@@ -23,6 +24,7 @@ class cash extends database{
         unset($_SESSION["cash"]);
     }
 
+    // 抓取用戶餘額
     public function getMoney(){
         $search = self::query("SELECT userMoney FROM member WHERE id =" . $this->uid);
         $cash = $search[0]['userMoney'];
