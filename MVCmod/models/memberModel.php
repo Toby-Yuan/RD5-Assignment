@@ -12,6 +12,7 @@ class member extends database{
         }
     }
 
+    // 抓取當前會員名稱
     public function getName(){
         $uid = $_SESSION['uid'];
         $member = self::query("SELECT userName FROM member WHERE id = $uid");
