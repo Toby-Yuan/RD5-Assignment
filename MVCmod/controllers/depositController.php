@@ -9,6 +9,7 @@ class insert{
         $this->result = new depositRun();
     }
 
+    // 進行存款
     public function insert(){
         $this->result::insert();
     }

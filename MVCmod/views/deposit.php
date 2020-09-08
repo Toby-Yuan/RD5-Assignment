@@ -13,6 +13,7 @@ $test->insert();
     <link rel="stylesheet" href="./CSS/depositStyle.css">
 </head>
 <body>
+    <!-- 存款表格 -->
     <form action="" method="post">
         <div id="fast">
             <h1>快速存款</h1>

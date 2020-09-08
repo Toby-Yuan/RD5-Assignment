@@ -12,6 +12,7 @@ class depositRun extends database{
         }
     }
 
+    // 存款動作, 根據不同按鈕執行不同金額
     public static function insert(){
         $uid = $_SESSION['uid'];
         $_SESSION["deposit"] = 1;
@@ -50,6 +51,7 @@ class depositRun extends database{
         }
     }
 
+    // 存入不同金額, 增加明細和更新用戶戶頭
     public static function insertFun($value, $uid, $cash){
         $nowTime = date("Y-m-d H:i:s");
         $cash += $value;
