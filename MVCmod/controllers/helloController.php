@@ -10,6 +10,7 @@ class controller {
         $this->result = new member();
     }
 
+    // 確認登入身份符合
     public function loginCheck(){
         return $this->result::getLogin();
     }

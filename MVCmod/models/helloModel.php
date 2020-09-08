@@ -5,6 +5,7 @@ session_start();
 
 class member extends database{
 
+    // 確認登入身份符合
     public static function getLogin(){
         $error = 0;
         if(isset($_POST["login"])){
@@ -30,6 +31,7 @@ class member extends database{
         return $error;
     }
 
+    // 跳轉至註冊頁面
     public function create(){
         if(isset($_POST["create"])){
             header("location: ./create");
@@ -37,6 +39,7 @@ class member extends database{
         }
     }
 
+    // 登出系統
     public function logout(){
         if(isset($_GET["logout"])){
             unset($_SESSION["uid"]);

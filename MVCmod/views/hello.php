@@ -14,6 +14,7 @@ $error->result->logout();
     <link rel="stylesheet" href="./CSS/indexStyle.css">
 </head>
 <body>
+    <!-- 會員登入表格 -->
     <form action="" method="post">
         <h1>會員登入</h1>
         <label for="userName">帳號</label>
